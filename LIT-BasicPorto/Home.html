@@ -1,0 +1,144 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Lysandra Velyca</title>
+    <link rel="stylesheet" href="Home.css" />
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Lysandra Velyca</a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero / Brand statement -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="accent">Lysandra Velyca</span></h1>
+          <p class="lead">
+            I build clear, usable web experiences — front-end development, UI
+            design, and accessibility.
+          </p>
+          <p>
+            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn ghost" href="#about">Learn more</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / Services -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills & Services</h2>
+        <p class="muted">What I bring to the table</p>
+        <ul class="skills-grid">
+          <li>
+            <h3>Frontend Dev</h3>
+            <p>
+              HTML, CSS, vanilla JS — responsive, semantic markup and
+              progressive enhancement.
+            </p>
+          </li>
+          <li>
+            <h3>UI / Design</h3>
+            <p>
+              Design systems, components, and accessible patterns for better UX.
+            </p>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About / Experience -->
+    <section id="about" class="section alt">
+      <div class="container about-grid">
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I’m a web developer who cares about clarity, accessibility, and
+            maintainable code. I’ve worked on small teams and solo projects —
+            from landing pages to multi-page web apps.
+          </p>
+          <h3>Experience</h3>
+          <ul class="experience-list">
+            <li>
+              <strong>Frontend Developer</strong> — Acme Co.
+              <span class="muted">(2022–Present)</span>
+              <p class="muted small">
+                Built component library and accessible UI for internal tools.
+              </p>
+            </li>
+            <li>
+              <strong>UI Freelancer</strong> — Freelance
+              <span class="muted">(2019–2022)</span>
+              <p class="muted small">
+                Worked with startups on rapid prototyping and visual design.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <aside class="about-aside">
+          <h3>Quick facts</h3>
+          <ul>
+            <li>Based in: City, Country</li>
+            <li>Available for: Contract, Remote</li>
+            <li>Tools: VS Code, Figma, Git</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">
+          Tell me about your project — I’ll reply within a few days.
+        </p>
+
+        <form class="contact-form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div>
+            <button class="btn" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Lysandra Velyca — Built with ❤️</p>
+        <ul class="social">
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          <li><a href="#" aria-label="GitHub">GitHub</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
