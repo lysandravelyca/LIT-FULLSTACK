@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trading Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>📈 Trading Dashboard</h1>
+    </header>
+
+    <main>
+      <section class="add-stock">
+        <form id="add-stock-form">
+          <input
+            type="text"
+            name="symbol"
+            placeholder="Enter Stock Symbol (e.g., AAPL)"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section id="stock-container" class="stock-grid">
+        <!-- Stock cards will be rendered here -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Trading Dashboard — Demo Project</p>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
