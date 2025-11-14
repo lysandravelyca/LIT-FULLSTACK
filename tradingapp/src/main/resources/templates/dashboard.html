@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h1>Portfolio Dashboard</h1>
+
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+      <tr th:each="portfolio : ${portfolios}">
+        <td th:text="${portfolio.id}">1</td>
+        <td th:text="${portfolio.name}">Sample Name</td>
+        <td th:text="${portfolio.value}">1000</td>
+        <td>
+          <a th:href="@{/portfolio/{id}(id=${portfolio.id})}">View</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
