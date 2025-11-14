@@ -23,22 +23,17 @@ public class PortfolioController {
         return portfolio;
     }
     
-    // TODO: Add @PostMapping
-    // TODO: Add @ResponseStatus(HttpStatus.CREATED) - should return 201
     public Portfolio createPortfolio(@RequestBody Portfolio portfolio) {
         portfolio.setId(nextId++);
         portfolios.put(portfolio.getId(), portfolio);
         return portfolio;
     }
     
-    // TODO: Add @DeleteMapping("/{id}")
-    // TODO: Return ResponseEntity<Void> with status 204 (NO_CONTENT)
     public ResponseEntity<Void> deletePortfolio(@PathVariable Long id) {
         if (!portfolios.containsKey(id)) {
             throw new PortfolioNotFoundException(id);
         }
         portfolios.remove(id);
-        // TODO: Return ResponseEntity with HttpStatus.NO_CONTENT
         return null;
     }
 }

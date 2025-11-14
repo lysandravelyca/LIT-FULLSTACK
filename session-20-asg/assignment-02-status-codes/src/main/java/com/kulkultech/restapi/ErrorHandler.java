@@ -17,27 +17,27 @@ package com.kulkultech.restapi;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-// TODO: Add @RestControllerAdvice annotation
-// This makes this class handle exceptions globally
-
+// Global exception handler
+@RestControllerAdvice
 public class ErrorHandler {
-    
-    // TODO: Add @ExceptionHandler(PortfolioNotFoundException.class)
-    // TODO: Add @ResponseStatus(HttpStatus.NOT_FOUND)
-    // This method should handle PortfolioNotFoundException
-    public ErrorResponse handlePortfolioNotFound(/* TODO: Add PortfolioNotFoundException parameter */) {
-        // TODO: Create ErrorResponse with status 404 and exception message
-        // TODO: Return the ErrorResponse
-        return null;
+
+    // Handle PortfolioNotFoundException
+    @ExceptionHandler(PortfolioNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handlePortfolioNotFound(PortfolioNotFoundException ex) {
+        return new ErrorResponse(
+            HttpStatus.NOT_FOUND.value(), // kode baawaan springbooth
+            ex.getMessage()
+        );
     }
-    
-    // TODO: Add @ExceptionHandler(Exception.class) for generic exceptions
-    // TODO: Add @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    // This method should handle all other exceptions
-    public ErrorResponse handleGenericException(/* TODO: Add Exception parameter */) {
-        // TODO: Create ErrorResponse with status 500 and generic message
-        // TODO: Return the ErrorResponse
-        return null;
+
+    // Handle all other exceptions
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleGenericException(Exception ex) {
+        return new ErrorResponse(
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            "Something went wrong. Please try again later."
+        );
     }
 }
-
