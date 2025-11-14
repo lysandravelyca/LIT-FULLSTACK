@@ -2,24 +2,28 @@ package com.kulkultech.restapi;
 
 import org.springframework.data.domain.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
-// TODO: Add @RestController and @RequestMapping("/api/portfolios")
-
+@RestController
+@RequestMapping("/api/portfolios")
 public class PortfolioController {
-    
-    // TODO: Inject PortfolioRepository using constructor injection
-    
-    // TODO: Add @GetMapping
-    // TODO: Add @RequestParam parameters with defaults:
-    //   - int page (defaultValue = "0")
-    //   - int size (defaultValue = "10")
-    //   - String sortBy (defaultValue = "id")
-    // TODO: Return type should be Page<Portfolio>
-    public Page<Portfolio> getPortfolios(/* TODO: Add parameters */) {
-        // TODO: Create Pageable using PageRequest.of(page, size, Sort.by(sortBy))
-        // TODO: Call repository.findAll(pageable)
-        // TODO: Return Page result
-        return null;
+
+    private final PortfolioRepository portfolioRepository;
+
+    // Constructor injection
+    @Autowired
+    public PortfolioController(PortfolioRepository portfolioRepository) {
+        this.portfolioRepository = portfolioRepository;
+    }
+
+    // GET /api/portfolios?page=0&size=10&sortBy=id
+    @GetMapping
+    public Page<Portfolio> getPortfolios(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sortBy
+    ) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+        return portfolioRepository.findAll(pageable);
     }
 }
-
